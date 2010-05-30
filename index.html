@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>atuttle/Taffy @ GitHub</title>
+	
+	<style type="text/css">
+		body {
+  		margin-top: 1.0em;
+  		background-color: #990000;
+		  font-family: "Helvetica,Arial,FreeSans";
+  		color: #ffffff;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+		h1 { font-size: 3.8em; color: #66ffff; margin-bottom: 3px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { font-size: 1.5em; color: #66ffff; }
+    h3 { text-align: center; color: #66ffff; }
+    a { color: #66ffff; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+		pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/atuttle/Taffy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/atuttle/Taffy/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/atuttle/Taffy/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://github.com/atuttle/Taffy">Taffy</a>
+      <span class="small">by <a href="http://github.com/atuttle">atuttle</a></span></h1>
+
+    <div class="description">
+      A RESTful web service framework for ColdFusion
+    </div>
+
+    <p>When it comes to ColdFusion, writing SOAP web services is easy, but consuming them can be difficult. On the other hand, writing REST web services is usually a little difficult, but consuming them is easy.
+
+Taffy is an attempt at making writing RESTful web services in ColdFusion easy and low-friction.
+
+Taffy is inspired largely by the FW/1 framework for MVC applications by Sean Corfield and the PowerNap framework for REST by Brian Carr. Taffy is built to be lightweight, easy to develop with, and fast. Taffy is a basically just 3 classes, one of which is optional.
+
+First, you have the core "Api" class that the Application.cfc of your API application extends. It implements all of the logic to wire together a response for the requested URI, as well as a few helper methods for setting up the framework.
+
+Secondly, there is a "RestApi" class, that each endpoint (cfc) extends, which implements a helper method enabling your services to return complex data types that will automatically be serialized to the requested data format (json, etc).
+
+Lastly, there is a "GenericRepresentation" class, used to serialize complex data objects into a string representation. This is used by default, but can be overridden with a custom class to serialize to other/custom formats.</p><h2>Dependencies</h2>
+<p>A CFML Engine, such as Adobe ColdFusion, Railo, or Open Blue Dragon</p>
+<h2>Install</h2>
+<p>Unzip the Taffy folder to the root of your website. Your API's Application.cfc should extend "taffy.core.api"; and each service CFC should extend "taffy.core.restapi".
+
+Collections and Members must be implemented as separate CFCs. To map a URI to a CFC, put custom metadata on the cfcomponent tag, like so:
+
+<cfcomponent taffy_uri="/artist/{artistId}">
+
+Lastly, each member/collection CFC should implement up to 4 methods, named: get, put, post, and delete. These map to the verbs allowed for that endpoint. Any un-implemented functions will be verbs that are denied for the endpoint.</p>
+<h2>License</h2>
+<p>Apache License, Version 2</p>
+<h2>Authors</h2>
+<p>Adam Tuttle (adam@fusiongrokker.com)</p>
+<h2>Contact</h2>
+<p>Adam Tuttle (adam@fusiongrokker.com)</p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/atuttle/Taffy/zipball/master">zip</a> or
+      <a href="http://github.com/atuttle/Taffy/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/atuttle/Taffy</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/atuttle/Taffy">atuttle/Taffy</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
