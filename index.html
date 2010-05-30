@@ -24,13 +24,13 @@
 	
 		<p>When it comes to ColdFusion, writing SOAP web services is easy, but consuming them can be difficult. On the other hand, writing REST web services is usually a little difficult, but consuming them is easy.</p>
 		<p>Taffy is an attempt at making writing RESTful web services in ColdFusion easy and low-friction.</p>
-		<p>Taffy is inspired largely by the FW/1 framework for MVC applications by Sean Corfield and the PowerNap framework for REST by Brian Carr. Taffy is built to be lightweight, easy to develop with, and fast. Taffy is a basically just 3 classes, one of which is optional.</p>
+		<p>Taffy is inspired largely by the <a href="http://fw1.riaforge.org">FW/1 framework</a> for MVC applications by <a href="http://corfield.org/blog/">Sean Corfield</a> and the <a href="http://powernap.riaforge.org">PowerNap framework</a> for REST by Brian Carr. Taffy is built to be lightweight, easy to develop with, and fast. Taffy is a basically just 3 classes, one of which is optional.</p>
 		<p>First, you have the core "Api" class that the Application.cfc of your API application extends. It implements all of the logic to wire together a response for the requested URI, as well as a few helper methods for setting up the framework.</p>
 		<p>Secondly, there is a "RestApi" class, that each endpoint (cfc) extends, which implements a helper method enabling your services to return complex data types that will automatically be serialized to the requested data format (json, etc).</p>
 		<p>Lastly, there is a "GenericRepresentation" class, used to serialize complex data objects into a string representation. This is used by default, but can be overridden with a custom class to serialize to other/custom formats.</p>
 		
 		<h2>Dependencies</h2>
-		<p>A CFML Engine, such as Adobe ColdFusion, Railo, or Open Blue Dragon</p>
+		<p>A CFML Engine, such as Adobe ColdFusion (version 8 or later), Railo, or Open Blue Dragon</p>
 	
 		<h2>Install</h2>
 		<p>Unzip the Taffy folder to the root of your website. Your API's Application.cfc should extend "taffy.core.api"; and each service CFC should extend "taffy.core.restapi".</p>
