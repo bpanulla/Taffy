@@ -1,4 +1,4 @@
-body { margin-top: 1.0em; background-color: #fff; font-family: "Helvetica,FreeSans"; color: #000; }
+body { margin-top: 1.0em; background-color: #fff; font-family: Helvetica, FreeSans; font-size: .8em; color: #000; }
 #container { margin: 0 auto; width: 700px; }
 h1 { font-size: 3.8em; color: #555; margin-bottom: 3px; }
 h1 .small { font-size: 0.4em; }

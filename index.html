@@ -35,7 +35,7 @@
 		<h2>Install</h2>
 		<p>Unzip the Taffy folder to the root of your website. Your API's Application.cfc should extend "taffy.core.api"; and each service CFC should extend "taffy.core.restapi".</p>
 		<p>Collections and Members must be implemented as separate CFCs. To map a URI to a CFC, put custom metadata on the cfcomponent tag, like so:
-			<pre><cfcomponent taffy_uri="/artist/{artistId}"></pre>
+			<pre>&lt;cfcomponent taffy_uri="/artist/{artistId}"&gt;</pre>
 		</p>
 		<p>Lastly, each member/collection CFC should implement up to 4 methods, named: get, put, post, and delete. These map to the verbs allowed for that endpoint. Any un-implemented functions will be verbs that are denied for the endpoint.</p>
 	
