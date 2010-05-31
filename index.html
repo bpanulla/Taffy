@@ -40,7 +40,7 @@
 		<p>Collections and Members <strong>must</strong> be implemented as separate CFCs. Each service CFC should extend "taffy.core.restapi". To map a URI to a CFC, put custom metadata on the cfcomponent tag, like so:
 			<pre>&lt;cfcomponent taffy_uri="/artist/{artistId}"&gt;</pre>
 		</p>
-		<p>Lastly, each member/collection CFC should implement up to 4 methods, named: get, put, post, and delete. These map to the verbs allowed for that endpoint. Any un-implemented functions will be verbs that are denied for the endpoint.</p>
+		<p>Lastly, each member/collection CFC should implement up to 4 methods, named: get, put, post, and delete. These map to the verbs allowed for that URI. Any un-implemented functions will be verbs that are denied for the URI.</p>
 		<p>For more thorough documentation, <a href="http://wiki.github.com/atuttle/Taffy/">see the wiki</a>.</p>
 		
 		<h2>License</h2>
