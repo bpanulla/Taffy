@@ -36,7 +36,7 @@
 		<p>Unzip the Taffy folder to the root of your website.</p>
 			
 		<h2>Get Started</h2>
-		<p>Your API's Application.cfc should extend "taffy.core.api"; and should <strong>not</strong> implement the <tt>onApplicationStart</tt>, or <tt>onRequest</tt> methods; as the framework uses these for request wiring.</p>
+		<p>Your API's Application.cfc should extend "taffy.core.api"; and should <strong>not</strong> implement the <tt>onApplicationStart</tt>, <tt>onRequestStart</tt>, or <tt>onRequest</tt> methods, as the framework uses these for request wiring. Taffy exposes a couple of methods that you can use to include custom code inside <tt>onApplicationStart</tt> and <tt>onRequestStart</tt>, as <tt>applicationHook</tt> and <tt>requestHook</tt>, respectively. Override these in your Application.cfc as needed.</p>
 		<p>Collections and Members <strong>must</strong> be implemented as separate CFCs. Each service CFC should extend "taffy.core.restapi". To map a URI to a CFC, put custom metadata on the cfcomponent tag, like so:
 			<pre>&lt;cfcomponent taffy_uri="/artist/{artistId}"&gt;</pre>
 		</p>
