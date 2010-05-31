@@ -22,23 +22,27 @@
 
 	    <div class="description">A RESTful web service framework for ColdFusion</div>
 	
-		<p>When it comes to ColdFusion, writing SOAP web services is easy, but consuming them can be difficult. On the other hand, writing REST web services is usually a little difficult, but consuming them is easy.</p>
+		<p>When it comes to ColdFusion, writing SOAP web services is easy, but consuming them can be difficult. On the other hand, writing REST web services requires jumping through a few hoops, but consuming them is easy.</p>
 		<p>Taffy is an attempt at making writing RESTful web services in ColdFusion easy and low-friction.</p>
 		<p>Taffy is inspired largely by the <a href="http://fw1.riaforge.org">FW/1 framework</a> for MVC applications by <a href="http://corfield.org/blog/">Sean Corfield</a> and the <a href="http://powernap.riaforge.org">PowerNap framework</a> for REST by Brian Carr. Taffy is built to be lightweight, easy to develop with, and fast. Taffy is a basically just 3 classes, one of which is optional.</p>
 		<p>First, you have the core "Api" class that the Application.cfc of your API application extends. It implements all of the logic to wire together a response for the requested URI, as well as a few helper methods for setting up the framework.</p>
 		<p>Secondly, there is a "RestApi" class, that each endpoint (cfc) extends, which implements a helper method enabling your services to return complex data types that will automatically be serialized to the requested data format (json, etc).</p>
-		<p>Lastly, there is a "GenericRepresentation" class, used to serialize complex data objects into a string representation. This is used by default, but can be overridden with a custom class to serialize to other/custom formats.</p>
+		<p>Lastly, there is a "GenericRepresentation" class, used to serialize complex data objects into a string representation. The included class will serialize any object into JSON, but can be overridden with a custom class to serialize to more formats, including any custom formats you may desire.</p>
 		
 		<h2>Dependencies</h2>
 		<p>A CFML Engine, such as Adobe ColdFusion (version 8 or later), Railo, or Open Blue Dragon</p>
 	
 		<h2>Install</h2>
-		<p>Unzip the Taffy folder to the root of your website. Your API's Application.cfc should extend "taffy.core.api"; and each service CFC should extend "taffy.core.restapi".</p>
-		<p>Collections and Members must be implemented as separate CFCs. To map a URI to a CFC, put custom metadata on the cfcomponent tag, like so:
+		<p>Unzip the Taffy folder to the root of your website.</p>
+			
+		<h2>Get Started</h2>
+		<p>Your API's Application.cfc should extend "taffy.core.api"; and should <strong>not</strong> implement the <tt>onApplicationStart</tt>, or <tt>onRequest</tt> methods; as the framework uses these for request wiring.</p>
+		<p>Collections and Members <strong>must</strong> be implemented as separate CFCs. Each service CFC should extend "taffy.core.restapi". To map a URI to a CFC, put custom metadata on the cfcomponent tag, like so:
 			<pre>&lt;cfcomponent taffy_uri="/artist/{artistId}"&gt;</pre>
 		</p>
 		<p>Lastly, each member/collection CFC should implement up to 4 methods, named: get, put, post, and delete. These map to the verbs allowed for that endpoint. Any un-implemented functions will be verbs that are denied for the endpoint.</p>
-	
+		<p>For more thorough documentation, <a href="http://wiki.github.com/atuttle/Taffy/">see the wiki</a>.</p>
+		
 		<h2>License</h2>
 		<p>Apache License, Version 2</p>
 	
